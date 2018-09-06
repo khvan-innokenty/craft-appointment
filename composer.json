@@ -1,0 +1,39 @@
+{
+    "name": "medesse/appointment",
+    "description": "Плагин для обработки формы с одним полем - телефон",
+    "type": "craft-plugin",
+    "version": "1.2.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "appointment"
+    ],
+    "support": {
+        "docs": "",
+        "issues": ""
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Medesse",
+            "homepage": "medesse.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "medesse\\appointment\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Appointment",
+        "handle": "appointment",
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "class": "medesse\\appointment\\Appointment"
+    }
+}

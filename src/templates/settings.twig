@@ -1,0 +1,54 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Appointment plugin for Craft CMS 3.x
+ *
+ * Appointment Settings.twig
+ *
+ * @author    Medesse
+ * @copyright Copyright (c) 2018 Medesse
+ * @link      medesse.com
+ * @package   Appointment
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("medesse\\appointment\\assetbundles\\appointment\\AppointmentAsset") %}
+
+<h2>Настройки рассылок</h2>
+
+{{ forms.textField({
+    label: 'Email получателя',
+    instructions: 'Email, на который будут приходить оповещения о новой заявке. Можно указать несколько адресов через запятую.',
+    id: 'emailTo',
+    name: 'emailTo',
+    value: settings['emailTo']})
+}}
+
+
+<h2>Настройки Roistat</h2>
+
+{{ forms.checkboxField({
+    label: 'Включить передачу данных в CRM через Roistat',
+    id: 'roistatEnabled',
+    name: 'roistatEnabled',
+    checked: settings['roistatEnabled']})
+}}
+
+{{ forms.textField({
+    label: 'Ключ интеграции с CRM',
+    instructions: 'Узнать можно в настройках Roistat (интеграция с CRM)',
+    id: 'roistatKey',
+    name: 'roistatKey',
+    value: settings['roistatKey']})
+}}
+
+{{ forms.textField({
+    label: 'ID кастомного поля с городом',
+    instructions: 'Узнать можно в настройках CRM',
+    id: 'cityFieldId',
+    name: 'cityFieldId',
+    value: settings['cityFieldId']})
+}}
